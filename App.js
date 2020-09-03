@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator, StackView } from '@react-navigation/stack';
 import {Dignidades} from "./pantallas/Dignidades"
+import {cargarConfig} from "./conexion/conexionBdd"
 const Tab = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
 
@@ -23,7 +24,11 @@ function DignidadesScreen() {
   );
 }
 export default class App extends Component {
-  
+  constructor(){
+    super()
+    if(!global.estaCargado){
+      cargarConfig()
+    }}
   
   render(){
     return  <NavigationContainer>
