@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator} from '@react-navigation/stack';
 import {Dignidades} from "./pantallas/Dignidades";
 import {Candidatos} from './pantallas/Candidatos';
-import {listaCandidato} from './pantallas/listaCandidatos';
+import {ListaCandidatos} from './pantallas/ListaCandidatos';
 import {cargarConfiguracion} from "./conexion/conexionBdd";
 
 const Tab = createBottomTabNavigator();
@@ -15,10 +15,10 @@ const HomeStack = createStackNavigator();
 function TabHome() {
   return <Tab.Navigator>
               <Tab.Screen
-                name='listaCandidatosScreen'
-                component={listaCandidato}
+                name='ListaCandidatosScreen'
+                component={ListaCandidatos}
                 options= {{
-                  tabBarLabel:'listaCandidato',
+                  tabBarLabel:'ListaCandidatos',
                   tabBarIcon: ()=>(
                     <Icon
                       name='user'
@@ -65,7 +65,7 @@ export default function App() {
     return  <NavigationContainer>
                   <HomeStack.Navigator initialRouteName= 'TabHomeScreen'>
                          <HomeStack.Screen name='TabHomeScreen' component={TabHome}></HomeStack.Screen>
-                         <HomeStack.Screen name='listaCandidatosScreen' component={listaCandidato}></HomeStack.Screen>
+                         <HomeStack.Screen name='ListaCandidatosScreen' component={ListaCandidatos}></HomeStack.Screen>
                          <HomeStack.Screen name='CandidatosScreen' component={Candidatos}></HomeStack.Screen>
                          <HomeStack.Screen name='DignidadScreen' component={Dignidades}></HomeStack.Screen>     
                   </HomeStack.Navigator>
