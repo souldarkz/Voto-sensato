@@ -1,14 +1,14 @@
 import { Alert } from 'react-native';
 
-export const guardarCandidato= (candidato, fnExito)=>{
+export const guardarCandidato = (candidato, fnExito)=>{
     console.log('Entra al metodo')
     global
     .bdd
-    .collection('candidato')
+    .collection('candidatos')
     .doc(candidato.cedula)
-    .set({
+    .set(
         candidato
-    })
+    )
     .then(()=>{
       Alert.alert('Info','Persona guardada exitosamente');
       fnExito();

@@ -8,6 +8,9 @@ import {Dignidades} from "./pantallas/Dignidades";
 import {Candidatos} from './pantallas/Candidatos';
 import {ListaCandidatos} from './pantallas/ListaCandidatos';
 import {cargarConfiguracion} from "./conexion/conexionBdd";
+import{Encuestas} from "./pantallas/encuestas"
+import {MenuInformacion} from './pantallas/MenuInformacion';
+
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
@@ -28,24 +31,10 @@ function TabHome() {
                 }}>  
               </Tab.Screen> 
               <Tab.Screen
-                name='CandidatosScreen'
-                component={Candidatos}
+                name='EncuestasScreen'
+                component={Encuestas}
                 options= {{
-                  tabBarLabel:'Candidatos',
-                  tabBarIcon: ()=>(
-                    <Icon
-                      name='user'
-                      size={32}
-                      color="skyblue"/>
-                  )
-                }}>  
-              </Tab.Screen> 
-
-              <Tab.Screen
-                name='DignidadScreen'
-                component={Dignidades}
-                options= {{
-                  tabBarLabel:'Dignidades',
+                  tabBarLabel:'Encuestas',
                   tabBarIcon: ()=>(
                     <Icon
                       name='user'
@@ -54,8 +43,11 @@ function TabHome() {
                   )
                 }}>  
               </Tab.Screen>
+
           </Tab.Navigator>
 }
+
+
 export default function App() {
 
     if(!global.estaCargado){
@@ -64,14 +56,15 @@ export default function App() {
 
     return  <NavigationContainer>
                   <HomeStack.Navigator initialRouteName= 'TabHomeScreen'>
-                         <HomeStack.Screen name='TabHomeScreen' component={TabHome}></HomeStack.Screen>
+                         <HomeStack.Screen name='TabHomeScreen' component={TabHome}
+                         options={{headerShown:false}}></HomeStack.Screen>
                          <HomeStack.Screen name='ListaCandidatosScreen' component={ListaCandidatos}></HomeStack.Screen>
                          <HomeStack.Screen name='CandidatosScreen' component={Candidatos}></HomeStack.Screen>
-                         <HomeStack.Screen name='DignidadScreen' component={Dignidades}></HomeStack.Screen>     
+                         <HomeStack.Screen name='DignidadScreen' component={Dignidades}></HomeStack.Screen>   
+                         <HomeStack.Screen name='MenuInformacionScreen' component={MenuInformacion}></HomeStack.Screen>   
                   </HomeStack.Navigator>
             </NavigationContainer>
   }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
