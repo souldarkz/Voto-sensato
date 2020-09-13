@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export class Dignidades extends Component {
+export class ItemTransito extends Component {
     render(){
         return <View style={styles.container}>
-            <Text style={{fontSize:20,textAlign:"center",textAlignVertical:"center"}}>DIGNIDADES</Text>
+            <Text style={{fontSize:20,textAlign:"center",textAlignVertical:"center"}}>TRANSITO </Text>
         </View>
     }
 }

@@ -10,6 +10,10 @@ import {ListaCandidatos} from './pantallas/ListaCandidatos';
 import {cargarConfiguracion} from "./conexion/conexionBdd";
 import{Encuestas} from "./pantallas/encuestas"
 import {MenuInformacion} from './pantallas/MenuInformacion';
+import {ItemSri} from './Menu/ItemSri';
+import {ItemJudicatura} from './Menu/ItemJudicatura';
+import {ItemTransito} from './Menu/ItemTransito';
+import {ItemParticipacionesAnter} from './Menu/ItemParticipacionesAnter';
 
 
 const Tab = createBottomTabNavigator();
@@ -56,12 +60,49 @@ export default function App() {
 
     return  <NavigationContainer>
                   <HomeStack.Navigator initialRouteName= 'TabHomeScreen'>
-                         <HomeStack.Screen name='TabHomeScreen' component={TabHome}
-                         options={{headerShown:false}}></HomeStack.Screen>
-                         <HomeStack.Screen name='ListaCandidatosScreen' component={ListaCandidatos}></HomeStack.Screen>
-                         <HomeStack.Screen name='CandidatosScreen' component={Candidatos}></HomeStack.Screen>
-                         <HomeStack.Screen name='DignidadScreen' component={Dignidades}></HomeStack.Screen>   
-                         <HomeStack.Screen name='MenuInformacionScreen' component={MenuInformacion}></HomeStack.Screen>   
+                         <HomeStack.Screen 
+                              name='TabHomeScreen' 
+                              component={TabHome}
+                              options={{headerShown:false}}
+                          ></HomeStack.Screen>
+                         <HomeStack.Screen 
+                              name='ListaCandidatosScreen' 
+                              component={ListaCandidatos}
+                         ></HomeStack.Screen>
+                         <HomeStack.Screen 
+                              name='CandidatosScreen' 
+                              component={Candidatos}
+                              options={{headerShown:false}}
+                          ></HomeStack.Screen>
+                         <HomeStack.Screen 
+                              name='DignidadScreen' 
+                              component={Dignidades}
+                          ></HomeStack.Screen>   
+                         <HomeStack.Screen 
+                              name='MenuInformacionScreen' 
+                              component={MenuInformacion}
+                              options={{headerShown:false}}
+                         ></HomeStack.Screen>
+                         <HomeStack.Screen 
+                              name='ItemSriScreen' 
+                              component={ItemSri}
+                              //options={{headerShown:false}}
+                         ></HomeStack.Screen>
+                         <HomeStack.Screen 
+                              name='ItemJudicaturaScreen' 
+                              component={ItemJudicatura}
+                              //options={{headerShown:false}}
+                         ></HomeStack.Screen>
+                         <HomeStack.Screen 
+                              name='ItemTransitoScreen' 
+                              component={ItemTransito}
+                              //options={{headerShown:false}}
+                         ></HomeStack.Screen> 
+                         <HomeStack.Screen 
+                              name='ItemParticipacionesAnterScreen' 
+                              component={ItemParticipacionesAnter}
+                              //options={{headerShown:false}}
+                         ></HomeStack.Screen>     
                   </HomeStack.Navigator>
             </NavigationContainer>
   }

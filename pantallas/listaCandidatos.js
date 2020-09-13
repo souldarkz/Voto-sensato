@@ -25,7 +25,7 @@ export class ListaCandidatos extends Component {
     };
       render(){
           return <View style={styles.container}>
-            
+            <Text style={styles.Text}>LISTA DE CANDIDATOS</Text>
                <View>
                 <FlatList
                     data={this.state.listaCands}
@@ -44,7 +44,7 @@ export class ListaCandidatos extends Component {
                   </FlatList>
              </View>
              <ActionButton
-                    buttonColor="rgba(231,76,60,1)"
+                    buttonColor="#2B95DE"
                     onPress={() => { 
                       this.props.navigation.navigate("CandidatosScreen")
                     }}
@@ -55,20 +55,17 @@ export class ListaCandidatos extends Component {
   const styles = StyleSheet.create({
   container: {
   flex: 1,
+  marginTop:30,
   },
   Text:{
-  fontSize: 20,
-  textAlign:'center',
-  color:'#25C805',
-  },
-  Input:{
-  alignItems: 'center',
-  justifyContent: 'center',
-  margin:4,
-  },
-  Button:{
-  margin:20,
-  
-  },
+    fontSize: 20,
+    textAlign:'center',
+    color:'#28ABC4',
+    },  
+    Text:{
+      fontSize: 20,
+      textAlign:'center',
+      color:'#28ABC4',
+      },
   });
   

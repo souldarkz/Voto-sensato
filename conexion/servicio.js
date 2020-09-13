@@ -10,7 +10,7 @@ export const guardarCandidato = (candidato, fnExito)=>{
         candidato
     )
     .then(()=>{
-      Alert.alert('Info','Persona guardada exitosamente');
+      Alert.alert('Info','Candidato guardado exitosamente');
       fnExito();
     })
     .catch((error)=>{

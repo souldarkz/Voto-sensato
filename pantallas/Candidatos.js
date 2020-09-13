@@ -15,6 +15,7 @@ export class Candidatos extends Component{
           nombre:'',
           apellidos:'',
           dignidad:'',
+          lista:'',
         };
       };
       limpiarCajas=()=>{
@@ -23,12 +24,12 @@ export class Candidatos extends Component{
           nombre:'',
           apellidos:'',
           dignidad:'',
+          lista:'',
         });
       };
     render(){
         return <View style={styles.container}>
-            <Text style={{fontSize:20,textAlign:"center",textAlignVertical:"center"}}>CANDIDATOS</Text>
-            <Text style={styles.Text}>INGRESAR CANDIDATO</Text>
+            <Text style={{fontSize:20,textAlign:"center",textAlignVertical:"center",color:'#28ABC4',}}>CANDIDATOS</Text>
             <View style={{alignItems:'center'}}>
                 <Avatar
                     rounded
@@ -37,6 +38,7 @@ export class Candidatos extends Component{
                     size='large'
                     ></Avatar>
             </View>
+            <Text style={styles.Text}>INGRESAR CANDIDATO</Text>
             <View style={styles.Input}>
                 <Input
                 value={this.state.cedula}
@@ -50,7 +52,7 @@ export class Candidatos extends Component{
                     <Icon
                         name='address-card'
                         size={15}
-                        color='#25C805'
+                        color='#28ABC4'
                     />
                     }>
                 </Input>
@@ -65,7 +67,7 @@ export class Candidatos extends Component{
                     <Icon
                         name='user'
                         size={15}
-                        color='#25C805'
+                        color='#28ABC4'
                     />
                     }>
                 </Input>
@@ -80,12 +82,12 @@ export class Candidatos extends Component{
                     <Icon
                         name='user'
                         size={15}
-                        color='#25C805'
+                        color='#28ABC4'
                     />
                     }>
                 </Input>
                 <Input
-                value={this.state.correo}
+                value={this.state.dignidad}
                 label='DIGNIDAD:'
                 placeholder='Ingrese Dignidad'
                 onChangeText={(text)=>{
@@ -95,7 +97,22 @@ export class Candidatos extends Component{
                     <Icon
                         name='user'
                         size={15}
-                        color='#25C805'
+                        color='#28ABC4'
+                    />
+                    }>
+                </Input>
+                <Input
+                value={this.state.lista}
+                label='LISTA:'
+                placeholder='Ingrese la Lista'
+                onChangeText={(text)=>{
+                        this.setState({lista:text});
+                }}
+                leftIcon={
+                    <Icon
+                        name='user'
+                        size={15}
+                        color='#28ABC4'
                     />
                     }>
                 </Input>
@@ -111,6 +128,7 @@ export class Candidatos extends Component{
                     nombre:this.state.nombre,
                     apellidos:this.state.apellidos,
                     dignidad:this.state.dignidad,
+                    lista:this.state.lista,
                         }
                         ,this.limpiarCajas);
                 }}
@@ -118,28 +136,12 @@ export class Candidatos extends Component{
                 <Icon
                     name="upload"
                     size={25}
-                    color="#25C805"
+                    color="#28ABC4"
                 />
                     }
                 iconRight>
                 </Button>
             </View>
-            <View>
-               <Button
-                title='RECUPERAR  '
-                onPress={()=>{ 
-                    obtenerListaCandidatos(this.repintarLista);                  
-                }}
-                icon={
-                  <Icon
-                    name="upload"
-                    size={25}
-                    color="#080807"
-                  />
-                }
-                iconRight
-               ></Button>
-               </View>
                </View>
         </View>
     }
@@ -148,8 +150,19 @@ export class Candidatos extends Component{
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+      marginTop:30,
     },
+    Text:{
+        fontSize: 20,
+        textAlign:'center',
+        color:'#28ABC4',
+        },
+    Input:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin:4,
+        },
+    Button:{
+        margin:20,
+        },
   });
