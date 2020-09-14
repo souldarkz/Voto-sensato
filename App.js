@@ -91,17 +91,17 @@ export default function App() {
                          <HomeStack.Screen 
                               name='ItemJudicaturaScreen' 
                               component={ItemJudicatura}
-                              //options={{headerShown:false}}
+                              options={{headerShown:false}}
                          ></HomeStack.Screen>
                          <HomeStack.Screen 
                               name='ItemTransitoScreen' 
                               component={ItemTransito}
-                              //options={{headerShown:false}}
+                              options={{headerShown:false}}
                          ></HomeStack.Screen> 
                          <HomeStack.Screen 
                               name='ItemParticipacionesAnterScreen' 
                               component={ItemParticipacionesAnter}
-                              //options={{headerShown:false}}
+                              options={{headerShown:false}}
                          ></HomeStack.Screen>     
                   </HomeStack.Navigator>
             </NavigationContainer>

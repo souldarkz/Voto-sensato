@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Alert, Button, StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View } from 'react-native';
 import {obtenerListaCandidatos} from '../conexion/recuperar';
 import {ItemCandidatos} from '../componentes/ItemCandidatos';
 import { FlatList } from 'react-native-gesture-handler';
-import { Avatar, Input } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import ActionButton from 'react-native-action-button';
 import {cargarConfiguracion} from '../conexion/conexionBdd';
 
@@ -25,6 +23,8 @@ export class ListaCandidatos extends Component {
     };
       render(){
           return <View style={styles.container}>
+            <Text style={{fontSize:20,textAlign:"center",textAlignVertical:"center",fontWeight: 'bold',}}
+                     >VOTO SENSATO</Text>
             <Text style={styles.Text}>LISTA DE CANDIDATOS</Text>
                <View>
                 <FlatList
@@ -61,11 +61,7 @@ export class ListaCandidatos extends Component {
     fontSize: 20,
     textAlign:'center',
     color:'#28ABC4',
+    fontWeight: 'bold',
     },  
-    Text:{
-      fontSize: 20,
-      textAlign:'center',
-      color:'#28ABC4',
-      },
   });
   

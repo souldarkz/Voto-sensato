@@ -29,7 +29,7 @@ export class Candidatos extends Component{
       };
     render(){
         return <View style={styles.container}>
-            <Text style={{fontSize:20,textAlign:"center",textAlignVertical:"center",color:'#28ABC4',}}>CANDIDATOS</Text>
+            <Text style={{fontSize:20,textAlign:"center",textAlignVertical:"center",color:'#28ABC4',fontWeight: 'bold',}}>CANDIDATO</Text>
             <View style={{alignItems:'center'}}>
                 <Avatar
                     rounded

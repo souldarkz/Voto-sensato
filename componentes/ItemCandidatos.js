@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Alert, StyleSheet, Text, View} from 'react-native';
-import { Input,Button, Avatar } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import { StyleSheet, Text, View} from 'react-native';
+import { Button, Avatar } from 'react-native-elements';
 
 export class ItemCandidatos extends Component{ 
     constructor(){
@@ -24,20 +23,17 @@ export class ItemCandidatos extends Component{
                                 </View>
 
                                 <View style={styles.contenedorDescripcion}>
-                                    <Text>
-                                        Cedula     : {this.props.pCandidato.cedula}
+                                    <Text style={styles.textoNom}>
+                                    {this.props.pCandidato.nombre} {this.props.pCandidato.apellidos}
                                     </Text>
-                                    <Text>
-                                        Nombres : {this.props.pCandidato.nombre}
+                                    <Text style={{textAlign:'center'}}>
+                                            {this.props.pCandidato.cedula}
                                     </Text>
-                                    <Text>
-                                        Apellidos : {this.props.pCandidato.apellidos}
+                                    <Text style={{textAlign:'center'}}>
+                                        {this.props.pCandidato.dignidad}
                                     </Text>
-                                    <Text>
-                                        Dignidad  : {this.props.pCandidato.dignidad}
-                                    </Text>
-                                    <Text>
-                                        Lista         : {this.props.pCandidato.lista}
+                                    <Text style={{textAlign:'center'}}>
+                                        LISTA {this.props.pCandidato.lista}
                                     </Text>
                                 </View>
                                 <View style={styles.buttonMenu}>
@@ -72,7 +68,12 @@ const styles = StyleSheet.create({
     touch: {
         flex: 3,
 },
-    contenido: {
+    textoNom: {
+        fontSize: 15,
+        textAlign: 'center',
+        fontWeight: 'bold',
+    },
+        contenido: {
                 width: '100%',
     },
     subContenido: {
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
     },
     contenedorDescripcion: { 
             flex: 3,
-            marginLeft: 5,
+            marginLeft: 1,
     },
             texto: {
             fontSize: 13,
@@ -114,6 +115,9 @@ const styles = StyleSheet.create({
             borderRadius: 10,
             marginVertical: 5,
             marginRight: 2,
+    },
+    estiloImagen:{
+        marginLeft: 5, 
     },
   
 });

@@ -11,7 +11,10 @@ export class MenuInformacion extends Component {
     render(){
         return <View style={styles.container}>
                 <View>
-                     <Text style={{fontSize:20,textAlign:"center",textAlignVertical:"center"}}>MENU DE INFORMACIÓN</Text>
+                <Text style={{fontSize:20,textAlign:"center",textAlignVertical:"center",fontWeight: 'bold',}}
+                     >VOTO SENSATO</Text>
+                     <Text style={{fontSize:20,textAlign:"center",textAlignVertical:"center",fontWeight: 'bold',color:'#28ABC4',}}
+                     >MENU DE INFORMACIÓN</Text>
                 </View>
 
                 <View style={styles.button}>
