@@ -41,7 +41,9 @@ export class ItemCandidatos extends Component{
                                         style={styles.estiloBoton}
                                         title='MENU'
                                         onPress={()=>{
+                                            global.cedulaCandidato=this.props.pCandidato.cedula;
                                         this.props.nav.navigate("MenuInformacionScreen")
+
                                         }}>
 
                                     </Button>

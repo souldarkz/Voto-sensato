@@ -21,3 +21,27 @@
       });
       
   };
+  export const obtenerListaSri = (fnRepintar) => {
+    global
+      .bdd
+      .collection('candidatos')
+      .doc(global.cedulaCandidato)
+      .collection('SRI')
+      .get()
+      .then((querySnapshot)=> {
+        let documentos = querySnapshot.docs;
+        let registroSri = null;
+        let registrosSri = [];
+        for (let i = 0; i < documentos.length; i++) {
+            registroSri = documentos[i].data();
+            registroSri.id = documentos[i].id;
+            registrosSri.push(registroSri);
+        }
+        console.log('todas los registro SRI',registrosSri);
+        fnRepintar(registrosSri);
+      })
+      .catch(error=>{
+          console.log("Error",error);
+      });
+      
+  };
